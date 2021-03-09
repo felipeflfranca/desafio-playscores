@@ -7,10 +7,12 @@ import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import Grid from '@material-ui/core/Grid';
 import SubMenu from "../SubMenu/SubMenu";
+import SportsSoccerOutlinedIcon from '@material-ui/icons/SportsSoccerOutlined';
 
 import i18n from "i18next";
 import { initReactI18next, useTranslation } from "react-i18next";
 import { translationBr } from "../../lang/translation";
+import { Badge, Chip, Divider } from '@material-ui/core';
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -19,6 +21,25 @@ const useStyles = makeStyles((theme: Theme) =>
             paddingRight: 0,
             textAlign: 'left',
         },
+        iconTitle: {
+            fontSize: 50,
+            float: "left"
+        },
+        customTitle: {
+            padding: 30,
+            marginBottom: 50
+        },
+        floatLeft: {
+            float: "left",
+            paddingTop: 4
+        },
+        floatRight: {
+            float: "right",
+            textAlign: "center"
+        },
+        width100: {
+            width: "100%"
+        }
     }),
 );
 
@@ -107,14 +128,53 @@ export default function Dashboard() {
                                 axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
                                 index={value}
                                 onChangeIndex={handleChangeIndex}
+                                className={classes.width100}
                             >
                                 <TabPanel value={value} index={0} dir={theme.direction}>
-                                    Item One
+                                    <div className={classes.customTitle}>
+                                        <SportsSoccerOutlinedIcon className={classes.iconTitle}/>
+                                        <div className={classes.floatLeft}>
+                                            <strong>{t("sportsSoccer")}</strong><br/>
+                                            <small>Sexta-Feira, dia 07 de agosto de 2020</small>
+                                        </div>
+                                        <div className={classes.floatRight}>
+                                            <small>{t("total")}</small><br/>
+                                            <Chip label={"23 "+t("players")} />
+                                        </div>
+                                    </div>
+                                    
+                                    <Divider className={classes.width100}/>
                                 </TabPanel>
                                 <TabPanel value={value} index={1} dir={theme.direction}>
+                                    <div className={classes.customTitle}>
+                                        <SportsSoccerOutlinedIcon className={classes.iconTitle}/>
+                                        <div className={classes.floatLeft}>
+                                            <strong>{t("campeonatos")}</strong><br/>
+                                            <small>Sexta-Feira, dia 07 de agosto de 2020</small>
+                                        </div>
+                                        <div className={classes.floatRight}>
+                                            <small>{t("total")}</small><br/>
+                                            <Chip label={"23 "+t("players")} />
+                                        </div>
+                                    </div>
+                                    
+                                    <Divider className={classes.width100}/>
                                     Item Two
                                 </TabPanel>
                                 <TabPanel value={value} index={2} dir={theme.direction}>
+                                    <div className={classes.customTitle}>
+                                        <SportsSoccerOutlinedIcon className={classes.iconTitle}/>
+                                        <div className={classes.floatLeft}>
+                                            <strong>{t("desempenho")}</strong><br/>
+                                            <small>Sexta-Feira, dia 07 de agosto de 2020</small>
+                                        </div>
+                                        <div className={classes.floatRight}>
+                                            <small>{t("total")}</small><br/>
+                                            <Chip label={"23 "+t("players")} />
+                                        </div>
+                                    </div>
+                                    
+                                    <Divider className={classes.width100}/>
                                     Item Three
                                 </TabPanel>
                             </SwipeableViews>

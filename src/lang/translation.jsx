@@ -17,7 +17,9 @@ export const translationBr = {
     budesliga: "Budesliga",
     futebol: "Futebol",
     campeonatos: "Campeonatos",
-    desempenho: "Desempenho"
+    desempenho: "Desempenho",
+    total: "Total",
+    players: "Jogadores"
 };  
 
 export const translationEn = {
